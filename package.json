@@ -1,6 +1,6 @@
 {
   "name": "feishu-raw-card-to-dsl",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "把飞书 im.message.get 的 raw_card_content 编辑器内部 envelope 转换为公开 JSON Schema 2.0 DSL，规避 user_card_content 丢失 column.padding 等字段的问题",
   "keywords": [
     "feishu",

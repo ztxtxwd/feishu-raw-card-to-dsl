@@ -1139,22 +1139,28 @@ function childToMarkdown(child: Record<string, unknown>, ctx: Ctx): string {
       return `\n\`\`\`${lang}\n${body}\n\`\`\`\n`;
     }
     case "list": {
-      // raw list: { items: [{ elements:[plain_text...], level:0|1|..., type:'ul'|'ol' }] }
-      // Project to inline markdown bullets / numbers, level*2-space indent.
+      // raw list: { items: [{ elements:[plain_text...], level:0|1|..., order?:N, type:'ul'|'ol' }] }
+      // Project to inline markdown bullets / numbers.
       // We emit a leading "\n" only — the upstream br/plain_text in the
       // sibling stream contributes its own newline, which stacks to the
       // archived convention of "...prev_line\n\n- bullet".
+      //
+      // Nested ordered lists — Feishu markdown parse rules (live-probed):
+      //   - Indent MUST be 4 spaces per level (`"    ".repeat(level)`).
+      //     2-space indent collapses children into the parent line.
+      //   - Numbers MUST restart per nesting group (use RAW `order`, or a
+      //     level-stack counter). A flat continuous 1..n sequence also
+      //     collapses nesting on parse, even with 4-space indent.
+      //   Confirmed: restart+4space keeps L0/L1/L2; continuous+2space,
+      //   restart+2space, continuous+4space all flatten/glue.
       const items = Array.isArray(prop.items) ? prop.items : [];
       const lines: string[] = [];
-      let counter = 0;
-      let lastType: string | undefined;
+      const levelCounters: number[] = [];
       for (const item of items) {
         if (!isRecord(item)) continue;
         const level = typeof item.level === "number" ? item.level : 0;
         const type = typeof item.type === "string" ? item.type : "ul";
-        if (type !== lastType) counter = 0;
-        lastType = type;
-        const indent = "  ".repeat(level);
+        const indent = "    ".repeat(level);
         const inner = Array.isArray(item.elements) ? item.elements : [];
         let text = "";
         for (const seg of inner) {
@@ -1162,8 +1168,17 @@ function childToMarkdown(child: Record<string, unknown>, ctx: Ctx): string {
           text += childToMarkdown(seg, ctx);
         }
         if (type === "ol") {
-          counter += 1;
-          lines.push(`${indent}${counter}. ${text}`);
+          let n: number;
+          if (typeof item.order === "number" && Number.isFinite(item.order) && item.order > 0) {
+            n = Math.floor(item.order);
+            levelCounters.length = level + 1;
+            levelCounters[level] = n;
+          } else {
+            levelCounters.length = level + 1;
+            levelCounters[level] = (levelCounters[level] ?? 0) + 1;
+            n = levelCounters[level];
+          }
+          lines.push(`${indent}${n}. ${text}`);
         } else {
           lines.push(`${indent}- ${text}`);
         }

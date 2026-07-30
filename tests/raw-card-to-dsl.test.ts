@@ -205,6 +205,86 @@ describe("list re-stitch", () => {
     // They must be split by a blank line that closes the list block.
     expect(content).toContain("根因排查中\n\n**历史问题TOP");
   });
+
+  // Feishu preserves nested ol ONLY with 4-space indent + per-group numbers
+  // (RAW `order`). 2-space indent and/or continuous 1..n both flatten on parse.
+  it("projects nested ordered lists as restart+4space markdown from RAW order", () => {
+    const dsl = rawCardToDsl(loadFixture("nested-ordered-list.raw.json")) as AnyDsl;
+    const md = findElements(
+      dsl,
+      (el) =>
+        el.tag === "markdown" &&
+        typeof el.content === "string" &&
+        (el.content as string).includes("进入开发阶段并分配任务"),
+    );
+    expect(md.length).toBe(1);
+    const content = md[0]?.content as string;
+    expect(content).toBe(
+      "\n1. 进入开发阶段并分配任务\n    1. 前端模块：负责页面开发与接口联调\n        1. 完成页面原型设计\n        2. 与后端接口联调\n    2. 后端模块：负责接口开发\n        1. 数据库设计与实现\n        2. API 接口开发与优化\n2. 测试模块：编写用例并执行回归测试\n    1. 单元测试覆盖率 ≥ 80%\n    2. 集成测试与性能测试\n3. 发布上线并收集用户反馈\n    1. 灰度发布至 10% 用户\n    2. 收集首批用户反馈并整理报告\n\n",
+    );
+    // Must not use the old continuous+2space shape.
+    expect(content).not.toContain("\n  2. 前端模块");
+    expect(content).not.toContain("\n8. 测试模块");
+  });
+
+  it("falls back to nesting-aware 4-space counters when ol items omit order", () => {
+    const envelope = {
+      json_card: JSON.stringify({
+        schema: "2.0",
+        body: {
+          id: "_1",
+          tag: "body",
+          property: {
+            elements: [
+              {
+                id: "_2",
+                tag: "markdown",
+                property: {
+                  originTag: "markdown",
+                  markdownElements: [],
+                  elements: [
+                    {
+                      id: "_3",
+                      tag: "list",
+                      property: {
+                        items: [
+                          {
+                            level: 0,
+                            type: "ol",
+                            elements: [{ id: "a", tag: "plain_text", property: { content: "父一" } }],
+                          },
+                          {
+                            level: 1,
+                            type: "ol",
+                            elements: [{ id: "b", tag: "plain_text", property: { content: "子一" } }],
+                          },
+                          {
+                            level: 1,
+                            type: "ol",
+                            elements: [{ id: "c", tag: "plain_text", property: { content: "子二" } }],
+                          },
+                          {
+                            level: 0,
+                            type: "ol",
+                            elements: [{ id: "d", tag: "plain_text", property: { content: "父二" } }],
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+        },
+      }),
+      json_attachment: {},
+      card_schema: 2,
+    };
+    const dsl = rawCardToDsl(envelope) as AnyDsl;
+    const md = findElements(dsl, (el) => el.tag === "markdown" && typeof el.content === "string");
+    expect(md[0]?.content).toBe("\n1. 父一\n    1. 子一\n    2. 子二\n2. 父二\n\n");
+  });
 });
 
 describe("code_block re-stitch", () => {
