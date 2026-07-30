@@ -1,0 +1,15 @@
+{
+  "json_card": "{\"schema\":\"2.0\",\"config\":{\"streamingMode\":false},\"body\":{\"tag\":\"body\",\"property\":{\"elements\":[{\"tag\":\"markdown\",\"property\":{\"originTag\":\"markdown\",\"markdownElements\":[],\"elements\":[{\"tag\":\"plain_text\",\"property\":{\"content\":\"销售顾问\",\"textStyle\":{\"attributes\":[\"bold\"]}}},{\"tag\":\"plain_text\",\"property\":{\"content\":\" \"}},{\"tag\":\"at\",\"property\":{\"userId\":\"on_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}},{\"tag\":\"plain_text\",\"property\":{\"content\":\" \"}},{\"tag\":\"person_v1\",\"property\":{\"pillShaped\":false,\"showAvatar\":true,\"showName\":true,\"style\":\"normal\",\"userID\":\"on_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}}]}},{\"tag\":\"markdown\",\"property\":{\"originTag\":\"markdown\",\"markdownElements\":[],\"elements\":[{\"tag\":\"person_v1\",\"property\":{\"pillShaped\":false,\"showAvatar\":true,\"showName\":true,\"style\":\"normal\",\"userID\":\"on_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}},{\"tag\":\"person_v1\",\"property\":{\"pillShaped\":false,\"showAvatar\":true,\"showName\":true,\"style\":\"capsule\",\"userID\":\"on_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}}],\"textStyle\":{\"size\":\"normal\"}}}]}}}",
+  "json_attachment": {
+    "images": {},
+    "persons": {
+      "on_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa": {
+        "person_id": "9000000000000000001",
+        "content": "Demo Person",
+        "type": 1,
+        "avatar_key": "v3_demo_01_00000000-0000-0000-0000-000000000000g"
+      }
+    }
+  },
+  "card_schema": 2
+}

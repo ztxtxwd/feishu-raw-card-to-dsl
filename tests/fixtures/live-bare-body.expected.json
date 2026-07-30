@@ -1,0 +1,37 @@
+{
+  "schema": "2.0",
+  "config": {
+    "update_multi": true
+  },
+  "body": {
+    "elements": [
+      {
+        "tag": "markdown",
+        "content": "各位伙伴：\n\nTo keep the event network stable, please switch phones and laptops from cellular to Staff Wi-Fi starting 14:00 on June 15.",
+        "text_align": "left"
+      },
+      {
+        "tag": "img",
+        "alt": {
+          "tag": "plain_text",
+          "content": "image"
+        },
+        "img_key": "img_v3_0212m_ff877047-4d89-4479-b832-42387190374g",
+        "preview": true,
+        "scale_type": "crop_center"
+      },
+      {
+        "tag": "markdown",
+        "content": "**温馨提示：**\n **1.** Please confirm devices are on Staff Wi-Fi:\n    **·**  **corp-wifi-staff**\n    适用于internal staff电脑端，连接路径：VPN portal → Staff Wi-Fi → Connect\n    **·**  **corp-wifi-guest**\n       适用于internal staff手机端、外部访客，仅能访问外部网络(不能翻墙)，不能访问任何公司内网，连接路径：密码连接（**guest-wifi-pass）**\n **2.** Avoid cellular data during the event unless necessary.\n\nQuestions? Search the IT bot and pick “[Campus Ops Desk](https://example.com/support/ticket)” to open a ticket.\nThanks for helping keep the event online.\n\n**Emergency contacts:**\nAlice：13800000999\nBob：13800000999\nCarol（Admin）：13800000999\nDave（Brand）：13800000999\n\nAcme Corp | Ops & Brand\n2026年6月15日\n",
+        "text_align": "left"
+      }
+    ]
+  },
+  "header": {
+    "template": "green",
+    "title": {
+      "tag": "plain_text",
+      "content": "Event Network Notice"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "card_schema": 2,
+  "json_attachment": {
+    "images": {}
+  },
+  "json_card": "{\"schema\":\"2.0\",\"config\":{\"update_multi\":true},\"body\":{\"tag\":\"body\",\"property\":{\"elements\":[{\"tag\":\"markdown\",\"property\":{\"elements\":[{\"tag\":\"plain_text\",\"property\":{\"content\":\"hello \"}},{\"tag\":\"emoji\",\"property\":{\"key\":\"OK\"}},{\"tag\":\"plain_text\",\"property\":{\"content\":\" world \"}},{\"tag\":\"emoji\",\"property\":{\"key\":\"Fire\"}}]}},{\"tag\":\"markdown\",\"property\":{\"elements\":[{\"tag\":\"list\",\"property\":{\"items\":[{\"type\":\"ul\",\"level\":0,\"elements\":[{\"tag\":\"plain_text\",\"property\":{\"content\":\"item \"}},{\"tag\":\"emoji\",\"property\":{\"key\":\"Blush\"}}]}]}}]}}]}}}"
+}

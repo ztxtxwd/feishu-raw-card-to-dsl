@@ -1,0 +1,14 @@
+{
+  "json_card": "{\"schema\":\"2.0\",\"config\":{},\"body\":{\"tag\":\"body\",\"property\":{\"elements\":[{\"id\":\"_8\",\"property\":{\"columns\":[{\"dataType\":\"text\",\"displayName\":\"排名\",\"horizontalAlign\":\"center\",\"name\":\"rank\",\"widthValue\":{\"type\":\"pixels\",\"value\":80}},{\"dataType\":\"text\",\"displayName\":\"厂商名称\",\"horizontalAlign\":\"left\",\"name\":\"brand\",\"widthValue\":{\"type\":\"builtin_table_column_width\",\"value\":\"auto\"}},{\"dataType\":\"number\",\"displayName\":\"销量(万辆)\",\"format\":{\"precision\":1,\"separator\":false,\"symbol\":\"\"},\"horizontalAlign\":\"right\",\"name\":\"sales\",\"widthValue\":{\"type\":\"pixels\",\"value\":120}},{\"dataType\":\"text\",\"displayName\":\"同比增长\",\"horizontalAlign\":\"center\",\"name\":\"yoy\",\"widthValue\":{\"type\":\"pixels\",\"value\":90}},{\"dataType\":\"options\",\"displayName\":\"主力阵营\",\"name\":\"status\",\"widthValue\":{\"type\":\"pixels\",\"value\":100}}],\"freezeFirstColumn\":true,\"headerStyle\":{\"backgroundStyle\":\"grey\",\"bold\":true,\"linesValue\":{\"type\":\"int_number\",\"value\":1},\"platformTextSize\":{\"mobile\":\"normal\",\"pc\":\"normal\"},\"textAlign\":\"center\",\"textColor\":\"default\",\"textSize\":\"normal\"},\"pageSize\":5,\"rowHeightValue\":{\"type\":\"builtin_table_row_height\",\"value\":\"middle\"},\"rows\":[{\"brand\":{\"data\":\"比亚迪汽车\"},\"rank\":{\"data\":\"1\"},\"sales\":{\"data\":\"195.8\"},\"status\":{\"data\":[{\"color\":\"green\",\"text\":\"新能源\"}]},\"yoy\":{\"data\":\"+32.4%\"}},{\"brand\":{\"data\":\"吉利汽车\"},\"rank\":{\"data\":\"2\"},\"sales\":{\"data\":\"98.5\"},\"status\":{\"data\":[{\"color\":\"blue\",\"text\":\"混动\"}]},\"yoy\":{\"data\":\"+18.2%\"}},{\"brand\":{\"data\":\"奇瑞汽车\"},\"rank\":{\"data\":\"3\"},\"sales\":{\"data\":\"89.2\"},\"status\":{\"data\":[{\"color\":\"indigo\",\"text\":\"出口\"}]},\"yoy\":{\"data\":\"+24.5%\"}},{\"brand\":{\"data\":\"长安汽车\"},\"rank\":{\"data\":\"4\"},\"sales\":{\"data\":\"78.4\"},\"status\":{\"data\":[{\"color\":\"orange\",\"text\":\"自主\"}]},\"yoy\":{\"data\":\"+5.1%\"}},{\"brand\":{\"data\":\"一汽大众\"},\"rank\":{\"data\":\"5\"},\"sales\":{\"data\":\"65.0\"},\"status\":{\"data\":[{\"color\":\"neutral\",\"text\":\"合资\"}]},\"yoy\":{\"data\":\"-12.3%\"}}]},\"tag\":\"table\"}]}}}",
+  "json_attachment": {
+    "images": {
+      "17": {
+        "origin_key": "img_v3_02115_6f8dc04e-1911-45af-9446-dcabd2d52cbg"
+      },
+      "36": {
+        "origin_key": "img_v3_02ad_e19fca1f-912a-450e-95de-3c229091b53g"
+      }
+    }
+  },
+  "card_schema": 2
+}

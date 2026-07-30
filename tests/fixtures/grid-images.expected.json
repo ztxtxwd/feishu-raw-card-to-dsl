@@ -1,0 +1,375 @@
+{
+  "schema": "2.0",
+  "config": {
+    "update_multi": true
+  },
+  "body": {
+    "direction": "vertical",
+    "elements": [
+      {
+        "tag": "markdown",
+        "content": "6月4日，Sample City全区消防快速处置队技能比武大赛中，Acme Manufacturing 消防快速处置队8 名队员组队参赛，通过奋勇拼搏、硬核应战，凭借扎实的专业素养、娴熟的实操技能与默契的团队协作，在全区重点企业、工业园区、乡镇街道共 **39 支强队（含多支专职消防队）参赛队伍中脱颖而出，成功斩获本次大赛团体总分第一名！两个单项第一名！**",
+        "text_align": "left"
+      },
+      {
+        "tag": "img",
+        "alt": {
+          "tag": "plain_text",
+          "content": ""
+        },
+        "img_key": "img_v3_0212c_6e23be4a-feba-4472-ab50-61623734c6dg",
+        "preview": true,
+        "scale_type": "fit_horizontal",
+        "corner_radius": "6px"
+      },
+      {
+        "tag": "markdown",
+        "content": "<font color='red'>**📋 比武科目**</font>",
+        "text_align": "left"
+      },
+      {
+        "tag": "markdown",
+        "content": "四项实操考核科目：\n🔹 一人二盘水带连接\n🔹 原地快速着装携灭火器灭火操\n🔹 室内消火栓快速出水操\n🔹 搬运重物折返接力",
+        "text_align": "left"
+      },
+      {
+        "tag": "hr"
+      },
+      {
+        "tag": "markdown",
+        "content": "<font color='red'>**✅ 选手高光战绩**</font>",
+        "text_align": "left"
+      },
+      {
+        "tag": "markdown",
+        "content": "赛场之上，我们队员精神抖擞，奋力拼搏，分秒必争，每一个动作精准规范、每一次处置高效迅速，充分展现了Acme fire team队伍的专业风采。",
+        "text_align": "left"
+      },
+      {
+        "tag": "markdown",
+        "content": "**班组项目**\n🥇 搬运重物折返接力（Member A、Member B、Member C、Member D、Member E）：全区第一名\n✅ 室内消火栓快速出水操：全员配合稳定发挥",
+        "text_align": "left"
+      },
+      {
+        "tag": "markdown",
+        "content": "**原地快速着装携灭火器灭火操**\n🥇 Member F：全区第一名\n🏅 Member G：全区第五名",
+        "text_align": "left"
+      },
+      {
+        "tag": "markdown",
+        "content": "**一人二盘水带连接**\n🏅 Member B：全区第七名\n🏅 Member H：全区第八名",
+        "text_align": "left"
+      },
+      {
+        "tag": "column_set",
+        "background_style": "default",
+        "columns": [
+          {
+            "tag": "column",
+            "elements": [
+              {
+                "tag": "img",
+                "alt": {
+                  "tag": "plain_text",
+                  "content": ""
+                },
+                "img_key": "img_v3_0212c_2f361b79-6409-4a91-afb1-e94bf9139f3g",
+                "preview": true,
+                "scale_type": "crop_center",
+                "corner_radius": "4px",
+                "size": "180px 120px"
+              }
+            ],
+            "horizontal_align": "center",
+            "vertical_align": "top",
+            "weight": 1,
+            "width": "weighted"
+          },
+          {
+            "tag": "column",
+            "elements": [
+              {
+                "tag": "img",
+                "alt": {
+                  "tag": "plain_text",
+                  "content": ""
+                },
+                "img_key": "img_v3_0212c_1dc944a3-26ff-4ca0-a3f4-c2cb7e2ac13g",
+                "preview": true,
+                "scale_type": "crop_center",
+                "corner_radius": "4px",
+                "size": "180px 120px"
+              }
+            ],
+            "horizontal_align": "center",
+            "vertical_align": "top",
+            "weight": 1,
+            "width": "weighted"
+          },
+          {
+            "tag": "column",
+            "elements": [
+              {
+                "tag": "img",
+                "alt": {
+                  "tag": "plain_text",
+                  "content": ""
+                },
+                "img_key": "img_v3_0212c_0b66320c-60cb-4114-b1fb-8f44483f78dg",
+                "preview": true,
+                "scale_type": "crop_center",
+                "corner_radius": "4px",
+                "size": "180px 120px"
+              }
+            ],
+            "horizontal_align": "center",
+            "vertical_align": "top",
+            "weight": 1,
+            "width": "weighted"
+          }
+        ],
+        "flex_mode": "none",
+        "horizontal_align": "left",
+        "vertical_align": "top"
+      },
+      {
+        "tag": "column_set",
+        "background_style": "default",
+        "columns": [
+          {
+            "tag": "column",
+            "elements": [
+              {
+                "tag": "img",
+                "alt": {
+                  "tag": "plain_text",
+                  "content": ""
+                },
+                "img_key": "img_v3_0212c_8aa7aef9-8125-4c50-9ff0-b7ef850eac6g",
+                "preview": true,
+                "scale_type": "crop_center",
+                "corner_radius": "4px",
+                "size": "180px 120px"
+              }
+            ],
+            "horizontal_align": "center",
+            "vertical_align": "top",
+            "weight": 1,
+            "width": "weighted"
+          },
+          {
+            "tag": "column",
+            "elements": [
+              {
+                "tag": "img",
+                "alt": {
+                  "tag": "plain_text",
+                  "content": ""
+                },
+                "img_key": "img_v3_0212c_b64b5648-3587-4927-ac88-0e51381124fg",
+                "preview": true,
+                "scale_type": "crop_center",
+                "corner_radius": "4px",
+                "size": "180px 120px"
+              }
+            ],
+            "horizontal_align": "center",
+            "vertical_align": "top",
+            "weight": 1,
+            "width": "weighted"
+          },
+          {
+            "tag": "column",
+            "elements": [
+              {
+                "tag": "img",
+                "alt": {
+                  "tag": "plain_text",
+                  "content": ""
+                },
+                "img_key": "img_v3_0212c_ffd9a828-eff2-45a4-a8a9-dbf0801737cg",
+                "preview": true,
+                "scale_type": "crop_center",
+                "corner_radius": "4px",
+                "size": "180px 120px"
+              }
+            ],
+            "horizontal_align": "center",
+            "vertical_align": "top",
+            "weight": 1,
+            "width": "weighted"
+          }
+        ],
+        "flex_mode": "none",
+        "horizontal_align": "left",
+        "vertical_align": "top"
+      },
+      {
+        "tag": "hr"
+      },
+      {
+        "tag": "markdown",
+        "content": "荣誉源于坚守，成绩始于深耕。这份团体桂冠与个人佳绩，是政府消防主管部门对Acme Corp消防应急工作的高度认可，也是政企消企深度联动、共建基层应急力量的落地成果，更是全体处置队员日复一日刻苦训练、严守底线的最好见证。",
+        "text_align": "left"
+      },
+      {
+        "tag": "column_set",
+        "background_style": "default",
+        "columns": [
+          {
+            "tag": "column",
+            "elements": [
+              {
+                "tag": "img",
+                "alt": {
+                  "tag": "plain_text",
+                  "content": ""
+                },
+                "img_key": "img_v3_0212c_5d02a9b2-66e2-489e-80c5-fe4f9997b9ag",
+                "preview": true,
+                "scale_type": "fit_horizontal",
+                "corner_radius": "4px"
+              }
+            ],
+            "horizontal_align": "center",
+            "vertical_align": "top",
+            "weight": 1,
+            "width": "weighted"
+          },
+          {
+            "tag": "column",
+            "elements": [
+              {
+                "tag": "img",
+                "alt": {
+                  "tag": "plain_text",
+                  "content": ""
+                },
+                "img_key": "img_v3_0212c_ac30d5d8-4a3c-447d-9e05-acb48594b24g",
+                "preview": true,
+                "scale_type": "fit_horizontal",
+                "corner_radius": "4px"
+              }
+            ],
+            "horizontal_align": "center",
+            "vertical_align": "top",
+            "weight": 1,
+            "width": "weighted"
+          }
+        ],
+        "flex_mode": "none",
+        "horizontal_align": "left",
+        "vertical_align": "top"
+      },
+      {
+        "tag": "hr"
+      },
+      {
+        "tag": "markdown",
+        "content": "安全生产无小事，应急备战不松懈。未来，Acme Manufacturing消防快速处置队将以此次比武为契机，以赛促练、以赛促战，持续夯实消防应急处置能力，打磨过硬消防队伍，筑牢基地安全生产、消防安全坚固防线，为公司平稳高质量运营保驾护航！",
+        "text_align": "left"
+      },
+      {
+        "tag": "markdown",
+        "content": "<font color='red'>**再次恭喜全体参赛队员！🎉**</font>",
+        "text_align": "center"
+      },
+      {
+        "tag": "markdown",
+        "content": "<font color='grey'>Ops — EHS</font>",
+        "text_align": "right"
+      },
+      {
+        "tag": "column_set",
+        "background_style": "default",
+        "columns": [
+          {
+            "tag": "column",
+            "direction": "vertical",
+            "elements": [
+              {
+                "tag": "img",
+                "alt": {
+                  "tag": "plain_text",
+                  "content": ""
+                },
+                "img_key": "img_v3_02115_6f8dc04e-1911-45af-9446-dcabd2d52cbg",
+                "margin": "2px 0px 0px 0px",
+                "preview": false,
+                "scale_type": "fit_horizontal",
+                "transparent": true
+              }
+            ],
+            "horizontal_align": "right",
+            "margin": "0px 0px 0px 0px",
+            "padding": "0px 0px 0px 0px",
+            "vertical_align": "bottom",
+            "weight": 1,
+            "width": "72px",
+            "horizontal_spacing": "0px",
+            "vertical_spacing": "0px"
+          },
+          {
+            "tag": "column",
+            "direction": "vertical",
+            "elements": [
+              {
+                "tag": "interactive_container",
+                "behaviors": [
+                  {
+                    "type": "open_url",
+                    "default_url": "https://applink.feishu.cn/T96JWwE1i7G9"
+                  }
+                ],
+                "background_style": "default",
+                "direction": "vertical",
+                "elements": [
+                  {
+                    "tag": "markdown",
+                    "content": "[妙卡](https://applink.feishu.cn/T95Bn8j3j53Y)",
+                    "text_align": "left",
+                    "text_size": "notation"
+                  }
+                ],
+                "horizontal_align": "left",
+                "hover_tips": {
+                  "tag": "plain_text",
+                  "content": "飞书卡片生成助手 powerd by Kivy"
+                },
+                "margin": "0px 0px 0px 0px",
+                "padding": "0px 0px 0px 0px",
+                "vertical_align": "top",
+                "horizontal_spacing": "8px",
+                "vertical_spacing": "0px",
+                "width": "fill"
+              }
+            ],
+            "horizontal_align": "left",
+            "margin": "0px 0px 0px 0px",
+            "padding": "0px 0px 0px 0px",
+            "vertical_align": "center",
+            "weight": 1,
+            "width": "auto",
+            "horizontal_spacing": "0px",
+            "vertical_spacing": "0px"
+          }
+        ],
+        "flex_mode": "none",
+        "horizontal_align": "right",
+        "horizontal_spacing": "6px",
+        "margin": "-8px 0px 0px 0px",
+        "vertical_align": "top"
+      }
+    ],
+    "horizontal_align": "left",
+    "padding": "16px 16px 16px 16px",
+    "vertical_align": "top"
+  },
+  "header": {
+    "template": "red",
+    "title": {
+      "tag": "plain_text",
+      "content": "🏆 喜报｜Acme Manufacturing快速处置队荣获「2026年度常州武进消防竞技」冠军！"
+    }
+  }
+}

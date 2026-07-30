@@ -1,0 +1,7 @@
+{
+  "json_card": "{\"schema\":\"2.0\",\"config\":{\"streamingMode\":false},\"body\":{\"id\":\"_1\",\"tag\":\"body\",\"property\":{\"elements\":[{\"id\":\"_2\",\"tag\":\"markdown\",\"property\":{\"originTag\":\"markdown\",\"markdownElements\":[],\"elements\":[{\"id\":\"_2_0\",\"tag\":\"list\",\"property\":{\"items\":[{\"level\":0,\"type\":\"ul\",\"elements\":[{\"id\":\"_2_0_0_0\",\"tag\":\"plain_text\",\"property\":{\"content\":\"售后流量异常，拆解发现弹簧移位，根因排查中\",\"textAlign\":\"left\"}}]}]}},{\"id\":\"_2_1\",\"tag\":\"plain_text\",\"property\":{\"content\":\"历史问题TOP：\",\"textAlign\":\"left\",\"textStyle\":{\"attributes\":[\"bold\"]}}},{\"id\":\"_2_2\",\"tag\":\"plain_text\",\"property\":{\"content\":\" 低风险，TMAP报码故障\",\"textAlign\":\"left\"}}]}}]}}}",
+  "json_attachment": {
+    "images": {}
+  },
+  "card_schema": 2
+}

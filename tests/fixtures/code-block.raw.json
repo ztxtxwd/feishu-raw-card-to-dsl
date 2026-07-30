@@ -1,0 +1,8 @@
+{
+  "json_card": "{\"schema\":\"2.0\",\"config\":{\"convertVersion\":1,\"enableForwardInteraction\":false,\"streamingMode\":false},\"body\":{\"id\":\"_1\",\"tag\":\"body\",\"property\":{\"direction\":\"vertical\",\"elements\":[{\"id\":\"_2\",\"tag\":\"markdown\",\"property\":{\"originTag\":\"markdown\",\"markdownElements\":[],\"textAlign\":\"left\",\"elements\":[{\"id\":\"_2_0\",\"tag\":\"code_block\",\"property\":{\"language\":\"plain_text\",\"contents\":[{\"contents\":[{\"content\":\"line one\",\"contentType\":\"text\"}]},{\"contents\":[{\"content\":\"line two\",\"contentType\":\"text\"}]},{\"contents\":[{\"content\":\"line three\",\"contentType\":\"text\"}]}]}}]}},{\"id\":\"_3\",\"tag\":\"markdown\",\"property\":{\"originTag\":\"markdown\",\"markdownElements\":[],\"textAlign\":\"left\",\"elements\":[{\"id\":\"_3_0\",\"tag\":\"code_block\",\"property\":{\"language\":\"bash\",\"contents\":[{\"contents\":[{\"content\":\"npm\",\"contentType\":\"text\"},{\"content\":\" \",\"contentType\":\"text\"},{\"content\":\"run\",\"contentType\":\"text\"},{\"content\":\" \",\"contentType\":\"text\"},{\"content\":\"build\",\"contentType\":\"text\"},{\"content\":\"\\n\",\"contentType\":\"text\"}]}]}}]}}]}},\"header\":{\"id\":\"26\",\"tag\":\"card_header\",\"property\":{\"template\":\"blue\",\"title\":{\"id\":\"27\",\"tag\":\"plain_text\",\"property\":{\"content\":\"code block fixture\"}}}},\"newBody\":null,\"source\":\"json\"}",
+  "json_attachment": {
+    "images": {},
+    "at_users": {}
+  },
+  "card_schema": 2
+}

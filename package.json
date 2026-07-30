@@ -1,0 +1,52 @@
+{
+  "name": "feishu-raw-card-to-dsl",
+  "version": "0.1.15",
+  "description": "把飞书 im.message.get 的 raw_card_content 编辑器内部 envelope 转换为公开 JSON Schema 2.0 DSL，规避 user_card_content 丢失 column.padding 等字段的问题",
+  "keywords": [
+    "feishu",
+    "lark",
+    "card",
+    "im",
+    "card-dsl"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/finalize-cjs.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "pnpm build && pnpm test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ztxtxwd/feishu-raw-card-to-dsl.git"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vitest": "^2.1.8"
+  }
+}
