@@ -41,10 +41,19 @@
     "node": ">=18"
   },
   "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ztxtxwd/feishu-raw-card-to-dsl.git"
   },
+  "homepage": "https://github.com/ztxtxwd/feishu-raw-card-to-dsl#readme",
+  "bugs": {
+    "url": "https://github.com/ztxtxwd/feishu-raw-card-to-dsl/issues"
+  },
+  "author": "ztxtxwd",
   "devDependencies": {
     "typescript": "^5.8.3",
     "vitest": "^2.1.8"

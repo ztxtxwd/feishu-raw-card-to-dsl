@@ -99,6 +99,32 @@ pnpm build          # 输出 dist/
 
 测试基于真实 raw envelope fixture（`tests/fixtures/*.raw.json`），覆盖 padding / img / markdown / chart / person / input / button / header 各路径。
 
+## 发布
+
+通过 GitHub Actions + npm [Trusted Publishing](https://docs.npmjs.com/trusted-publishers/)（OIDC）发布，仓库不存 `NPM_TOKEN`。
+
+首次配置（只需一次）：打开 [npm 包 Settings → Trusted Publisher](https://www.npmjs.com/package/feishu-raw-card-to-dsl/access)，添加 GitHub Actions：
+
+| 字段 | 值 |
+|---|---|
+| Organization or user | `ztxtxwd` |
+| Repository | `feishu-raw-card-to-dsl` |
+| Workflow filename | `publish.yml` |
+| Allowed actions | `npm publish` |
+
+之后每次发版：
+
+```bash
+# 1. 改 package.json 的 version（例如 0.1.16）
+# 2. 提交推送
+git add package.json && git commit -m "release: v0.1.16" && git push
+
+# 3. 打 tag 并创建 GitHub Release（会触发 publish.yml）
+gh release create v0.1.16 --generate-notes
+```
+
+`package.json` 的 version 必须与 Release tag（去掉前缀 `v`）一致，否则 workflow 会失败。
+
 ## License
 
 MIT

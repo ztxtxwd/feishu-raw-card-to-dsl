@@ -1,0 +1,62 @@
+name: Publish
+
+# Publishes to npm when a GitHub Release is published.
+# Auth: npm Trusted Publishing (OIDC) — no NPM_TOKEN secret needed.
+# Setup once: https://www.npmjs.com/package/feishu-raw-card-to-dsl → Settings → Trusted Publisher
+#   Organization or user : ztxtxwd
+#   Repository           : feishu-raw-card-to-dsl
+#   Workflow filename    : publish.yml
+#   Allowed actions      : npm publish
+#
+# Release flow:
+#   1. Bump version in package.json (must match the release tag without "v")
+#   2. Commit & push
+#   3. Create a GitHub Release with tag vX.Y.Z → this workflow publishes
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          cache: pnpm
+
+      # Trusted Publishing needs npm CLI >= 11.5.1
+      - name: Use latest npm
+        run: npm install -g npm@latest
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm test
+
+      - name: Check package.json version matches release tag
+        run: |
+          TAG="${{ github.event.release.tag_name }}"
+          VERSION="${TAG#v}"
+          PKG="$(node -p "require('./package.json').version")"
+          echo "tag=$TAG package.json=$PKG"
+          if [ "$PKG" != "$VERSION" ]; then
+            echo "::error::package.json version ($PKG) must equal release tag without leading v ($VERSION)"
+            exit 1
+          fi
+
+      # --ignore-scripts: build/test already ran; avoid prepublishOnly needing pnpm again
+      # Do NOT set NODE_AUTH_TOKEN — OIDC trusted publishing authenticates via id-token
+      - name: Publish to npm
+        run: npm publish --access public --provenance --ignore-scripts
