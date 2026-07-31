@@ -860,6 +860,29 @@ function renderInlinePerson(prop: Record<string, unknown>): string {
   if (typeof prop.style === "string") parts.push(`style='${prop.style}'`);
   return `<person ${parts.join(" ")}></person>`;
 }
+
+/**
+ * Resolve the public `<at id=...>` target from a raw `at` child.
+ *
+ * Real Feishu raw stamps camelCase `userID` (same casing as person chips).
+ * Some fixtures / alternate paths use `userId` or `user_id`. Prefer any id
+ * on the element itself — user_card_content's ground truth is the open_id
+ * there — over `at_users[].user_id`, which can be a numeric user_id that
+ * the public mention syntax does not accept.
+ */
+function resolveAtUserId(prop: Record<string, unknown>, ctx: Ctx): string | undefined {
+  if (typeof prop.userID === "string" && prop.userID) return prop.userID;
+  if (typeof prop.userId === "string" && prop.userId) return prop.userId;
+  if (typeof prop.user_id === "string" && prop.user_id) return prop.user_id;
+  const key = typeof prop.atUserKey === "string" ? prop.atUserKey
+    : typeof prop.at_user_key === "string" ? prop.at_user_key
+    : undefined;
+  if (!key || !ctx.atUsers[key]) return undefined;
+  // Map keys for real users are open_ids (ou_/on_); attachment.user_id may
+  // be a different id type. Prefer the key when it looks like an open_id.
+  if (/^(ou_|on_)/.test(key)) return key;
+  return ctx.atUsers[key].user_id;
+}
 function rebuildMarkdown(property: Record<string, unknown>, ctx: Ctx): unknown {
   const out: Record<string, unknown> = { tag: "markdown" };
   const elements = Array.isArray(property.elements) ? property.elements : [];
@@ -1008,13 +1031,7 @@ function childToInlineSegment(
     case "at_all":
       return { content: "<at id=all></at>", bold, color };
     case "at": {
-      const userId = typeof prop.userId === "string" ? prop.userId
-        : typeof prop.user_id === "string" ? prop.user_id
-        : (() => {
-            const key = typeof prop.atUserKey === "string" ? prop.atUserKey : undefined;
-            if (key && ctx.atUsers[key]) return ctx.atUsers[key].user_id;
-            return undefined;
-          })();
+      const userId = resolveAtUserId(prop, ctx);
       return { content: userId ? `<at id=${userId}></at>` : "<at></at>", bold, color };
     }
     case "text_tag": {
@@ -1079,15 +1096,8 @@ function childToMarkdown(child: Record<string, unknown>, ctx: Ctx): string {
       // syntax for everyone is <at id=all></at>.
       return "<at id=all></at>";
     case "at": {
-      // Single-user @: raw stores user_id under the property; if it
-      // references the at_users attachment table, pull it from there.
-      const userId = typeof prop.userId === "string" ? prop.userId
-        : typeof prop.user_id === "string" ? prop.user_id
-        : (() => {
-            const key = typeof prop.atUserKey === "string" ? prop.atUserKey : undefined;
-            if (key && ctx.atUsers[key]) return ctx.atUsers[key].user_id;
-            return undefined;
-          })();
+      // Single-user @: see resolveAtUserId. Real raw uses `userID` (open_id).
+      const userId = resolveAtUserId(prop, ctx);
       return userId ? `<at id=${userId}></at>` : "<at></at>";
     }
     case "person":

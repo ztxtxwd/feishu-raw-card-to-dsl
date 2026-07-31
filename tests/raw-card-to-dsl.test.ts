@@ -127,6 +127,25 @@ describe("markdown re-stitch", () => {
     expect(md[0]?.content).toContain("<at id=all></at>");
   });
 
+  // Regression: real Feishu raw stamps `userID` (capital ID) on `at` children,
+  // same casing as person chips. We previously only read `userId` / `user_id`,
+  // so mentions collapsed to empty `<at></at>`. Prefer the open_id on the
+  // element — not at_users[].user_id, which can be a numeric user_id.
+  it("renders <at id=ou_...> from raw userID (not empty <at></at>)", () => {
+    const dsl = rawCardToDsl(loadFixture("markdown-at-userid.raw.json")) as AnyDsl;
+    const md = findElements(
+      dsl,
+      (el) => el.tag === "markdown" && typeof el.content === "string",
+    );
+    expect(md.length).toBe(1);
+    expect(md[0]?.content).toBe(
+      "<at id=ou_84cb0e9f50147ff0de98f2122705343f></at> 你好～",
+    );
+    expect(md[0]?.content).not.toContain("<at></at>");
+    // Must not leak the numeric attachment user_id into the mention.
+    expect(md[0]?.content).not.toContain("7441015090323947523");
+  });
+
   it("collapses bold + color into inline markdown markers", () => {
     const dsl = rawCardToDsl(loadFixture("button-behaviors.raw.json")) as AnyDsl;
     const md = findElements(dsl, (el) =>

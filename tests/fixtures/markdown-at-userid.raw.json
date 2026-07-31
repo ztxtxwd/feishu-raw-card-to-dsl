@@ -1,0 +1,14 @@
+{
+  "json_card": "{\"schema\":\"2.0\",\"config\":{\"streamingMode\":false},\"body\":{\"tag\":\"body\",\"property\":{\"elements\":[{\"tag\":\"markdown\",\"property\":{\"originTag\":\"markdown\",\"markdownElements\":[],\"elements\":[{\"tag\":\"at\",\"property\":{\"userID\":\"ou_84cb0e9f50147ff0de98f2122705343f\"}},{\"tag\":\"plain_text\",\"property\":{\"content\":\" 你好～\"}}]}}]}}}",
+  "json_attachment": {
+    "at_users": {
+      "ou_84cb0e9f50147ff0de98f2122705343f": {
+        "content": "赵天雄",
+        "mention_key": "@_user_1",
+        "user_id": "7441015090323947523"
+      }
+    },
+    "images": {}
+  },
+  "card_schema": 2
+}
